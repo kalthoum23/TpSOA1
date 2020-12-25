@@ -1,0 +1,24 @@
+{
+  "projetSoaApp": {
+    "bureau": {
+      "home": {
+        "title": "Bureaus",
+        "createLabel": "Créer un nouveau Bureau",
+        "createOrEditLabel": "Créer ou éditer un Bureau",
+        "search": "Recherche pour Bureau",
+        "notFound": "Aucun Bureau trouvé"
+      },
+      "created": "Un nouveau Bureau a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Bureau avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Bureau avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Bureau {{ id }} ?"
+      },
+      "detail": {
+        "title": "Bureau"
+      },
+      "numero": "Numero",
+      "employe": "Employe"
+    }
+  }
+}

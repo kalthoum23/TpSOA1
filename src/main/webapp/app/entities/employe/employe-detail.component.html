@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="employe">
+            <h2><span jhiTranslate="projetSoaApp.employe.detail.title">Employe</span> {{ employe.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="projetSoaApp.employe.nom">Nom</span></dt>
+                <dd>
+                    <span>{{ employe.nom }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetSoaApp.employe.phone">Phone</span></dt>
+                <dd>
+                    <span>{{ employe.phone }}</span>
+                </dd>
+                <dt><span jhiTranslate="projetSoaApp.employe.projet">Projet</span></dt>
+                <dd>
+                    <div *ngIf="employe.projet">
+                        <a [routerLink]="['/projet', employe.projet?.id, 'view']">{{ employe.projet?.id }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="projetSoaApp.employe.bureau">Bureau</span></dt>
+                <dd>
+                    <div *ngIf="employe.bureau">
+                        <a [routerLink]="['/bureau', employe.bureau?.id, 'view']">{{ employe.bureau?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/employe', employe.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

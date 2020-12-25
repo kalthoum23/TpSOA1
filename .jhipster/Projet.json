@@ -1,0 +1,28 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "employe",
+      "otherEntityName": "employe",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "projet"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "intitule",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "changelogDate": "20201218211550",
+  "dto": "no",
+  "searchEngine": "elasticsearch",
+  "service": "serviceImpl",
+  "entityTableName": "projet",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "no"
+}

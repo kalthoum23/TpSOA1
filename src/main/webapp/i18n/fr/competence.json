@@ -1,0 +1,22 @@
+{
+  "projetSoaApp": {
+    "competence": {
+      "home": {
+        "title": "Competences",
+        "createLabel": "Créer un nouveau Competence",
+        "createOrEditLabel": "Créer ou éditer un Competence",
+        "search": "Recherche pour Competence",
+        "notFound": "Aucun Competence trouvé"
+      },
+      "created": "Un nouveau Competence a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Competence avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Competence avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Competence {{ id }} ?"
+      },
+      "detail": {
+        "title": "Competence"
+      }
+    }
+  }
+}

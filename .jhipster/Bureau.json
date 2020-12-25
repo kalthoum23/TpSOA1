@@ -1,0 +1,28 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "employe",
+      "otherEntityName": "employe",
+      "relationshipType": "one-to-one",
+      "ownerSide": false,
+      "otherEntityRelationshipName": "bureau"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "numero",
+      "fieldType": "Integer"
+    }
+  ],
+  "changelogDate": "20201218223414",
+  "dto": "no",
+  "searchEngine": "elasticsearch",
+  "service": "serviceImpl",
+  "entityTableName": "bureau",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "no"
+}

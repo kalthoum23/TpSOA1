@@ -1,0 +1,78 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-employe-heading" jhiTranslate="projetSoaApp.employe.home.createOrEditLabel">Create or edit a Employe</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetSoaApp.employe.nom" for="field_nom">Nom</label>
+                    <input type="text" class="form-control" name="nom" id="field_nom"
+                           formControlName="nom"/>
+                    <div *ngIf="editForm.get('nom')!.invalid && (editForm.get('nom')!.dirty || editForm.get('nom')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('nom')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetSoaApp.employe.phone" for="field_phone">Phone</label>
+                    <input type="text" class="form-control" name="phone" id="field_phone"
+                           formControlName="phone"/>
+                    <div *ngIf="editForm.get('phone')!.invalid && (editForm.get('phone')!.dirty || editForm.get('phone')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('phone')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetSoaApp.employe.projet" for="field_projet">Projet</label>
+                    <select class="form-control" id="field_projet" name="projet" formControlName="projet">
+                        <option *ngIf="!editForm.get('projet')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="projetOption.id === editForm.get('projet')!.value?.id ? editForm.get('projet')!.value : projetOption" *ngFor="let projetOption of projets; trackBy: trackById">{{ projetOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('projet')!.invalid && (editForm.get('projet')!.dirty || editForm.get('projet')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('projet')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="projetSoaApp.employe.bureau" for="field_bureau">Bureau</label>
+                    <select class="form-control" id="field_bureau" name="bureau" formControlName="bureau">
+                        <option *ngIf="!editForm.get('bureau')!.value" [ngValue]="null" selected></option>
+                        <option [ngValue]="bureauOption.id === editForm.get('bureau')!.value?.id ? editForm.get('bureau')!.value : bureauOption" *ngFor="let bureauOption of bureaus; trackBy: trackById">{{ bureauOption.id }}</option>
+                    </select>
+                </div>
+                <div *ngIf="editForm.get('bureau')!.invalid && (editForm.get('bureau')!.dirty || editForm.get('bureau')!.touched)">
+                    <small class="form-text text-danger"
+                           *ngIf="editForm.get('bureau')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

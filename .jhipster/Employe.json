@@ -1,0 +1,45 @@
+{
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "relationships": [
+    {
+      "relationshipName": "projet",
+      "otherEntityName": "projet",
+      "relationshipType": "many-to-one",
+      "relationshipValidateRules": ["required"],
+      "otherEntityField": "id",
+      "otherEntityRelationshipName": "employe"
+    },
+    {
+      "relationshipName": "bureau",
+      "otherEntityName": "bureau",
+      "relationshipType": "one-to-one",
+      "relationshipValidateRules": ["required"],
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "useJPADerivedIdentifier": false,
+      "otherEntityRelationshipName": "employe"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "nom",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "changelogDate": "20201218213121",
+  "dto": "no",
+  "searchEngine": "elasticsearch",
+  "service": "serviceImpl",
+  "entityTableName": "employe",
+  "databaseType": "sql",
+  "readOnly": false,
+  "jpaMetamodelFiltering": false,
+  "pagination": "no"
+}
